@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Simple FTPS deploy via curl. Reads credentials from .env.
+# Simple FTP deploy via curl. Reads credentials from .env.
+# Note: uses plain FTP because Websupport's TLS data channel drops mid-upload
+# on per-domain agentftp.<domain> accounts (control channel works, data channel 450).
 set -euo pipefail
 
 cd "$(dirname "$0")"
@@ -21,13 +23,13 @@ set -a; source .env; set +a
 [[ "${FTP_REMOTE_DIR}" != */ ]] && FTP_REMOTE_DIR="${FTP_REMOTE_DIR}/"
 
 # Files to skip from the local dir (repo metadata, env, scripts).
-EXCLUDES=(.git .gitignore .env .env.example deploy.sh README.md .DS_Store node_modules)
+EXCLUDES=(.git .gitignore .env .env.example deploy.sh README.md .DS_Store node_modules .backups)
 
 upload() {
   local local_path="$1"
   local rel="${local_path#${LOCAL_DIR}/}"
   echo "  → ${rel}"
-  curl --fail --ssl-reqd --ftp-create-dirs \
+  curl --fail --ftp-create-dirs \
        --user "${FTP_USER}:${FTP_PASS}" \
        --upload-file "${local_path}" \
        "ftp://${FTP_HOST}${FTP_REMOTE_DIR}${rel}"
