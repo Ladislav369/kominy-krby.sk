@@ -1,0 +1,1 @@
+- [Project: kominy-krby.sk deploy state](project_kominy_krby.md) — repo conventions, FTP layout, what's currently live, where the parking-page backup lives
