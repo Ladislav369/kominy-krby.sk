@@ -1,8 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://kominy-krby.sk/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/montaz-nerezoveho-komina-rodinny-dom.jpg</image:loc>
+      <image:title>Montáž nerezového komína na rodinnom dome</image:title>
+      <image:caption>Hotová montáž nerezového komína nasadeného na pôvodný murovaný komín rodinného domu.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/montaz-nerezoveho-komina-podkrovie.jpg</image:loc>
+      <image:title>Nerezový komín v podkroví — montáž</image:title>
+      <image:caption>Zvislo vedený nerezový komínový systém v podkroví počas montáže.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/nerezovy-komin-prestup-podkrovie.jpg</image:loc>
+      <image:title>Prestup komína cez strop podkrovia</image:title>
+      <image:caption>Detail prestupu nerezového komína cez stropnú konštrukciu v podkroví.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/obhliadka-komina-na-streche.jpg</image:loc>
+      <image:title>Obhliadka komína na streche</image:title>
+      <image:caption>Kominár vykonáva obhliadku murovaného komína na streche s tabletom.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/moderna-krbova-pec-v-obyvacke.jpg</image:loc>
+      <image:title>Moderná krbová pec v obývačke</image:title>
+      <image:caption>Moderná šedá krbová pec voľne stojaca s pripojením do komína.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/poskodeny-murovany-komin-pred-vlozkovanim.jpg</image:loc>
+      <image:title>Poškodený murovaný komín pred vložkovaním</image:title>
+      <image:caption>Pohľad zhora do poškodeného starého murovaného komína pred sanáciou.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/vyfrezovany-komin-pohlad-zhora.jpg</image:loc>
+      <image:title>Vyfrézovaný komín — pohľad zhora</image:title>
+      <image:caption>Pohľad zhora do vyfrézovaného komínového prieduchu po vyčistení.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/samostatne-stojaci-komin-zahradny-domcek.jpg</image:loc>
+      <image:title>Samostatne stojaci komín pri záhradnom domčeku</image:title>
+      <image:caption>Samostatne stojaci nerezový komín namontovaný k drevenému záhradnému domčeku.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/priprava-pre-montaz-krbu-dymovod.jpg</image:loc>
+      <image:title>Príprava montáže krbu</image:title>
+      <image:caption>Príprava montáže krbu — pripravený dymovod a otvor pre pripojenie do komína.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/nerezovy-komin-na-zahradnej-stavbe.jpg</image:loc>
+      <image:title>Nerezový komín na záhradnej stavbe</image:title>
+      <image:caption>Nerezový komín pevne uchytený na bočnej stene záhradnej stavby.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/krbova-vlozka-s-keramickymi-kachlickami.jpg</image:loc>
+      <image:title>Krbová vložka s keramickými kachličkami</image:title>
+      <image:caption>Krbová vložka s krémovými keramickými kachličkami a tepelnou izoláciou steny.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/moderny-cierny-rodinny-dom-s-kominom.jpg</image:loc>
+      <image:title>Moderný čierny dom s nerezovým komínom</image:title>
+      <image:caption>Moderný rodinný dom s čiernou plechovou fasádou a tenkým komínom.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/cierny-dymovod-rozvod-podkrovie.jpg</image:loc>
+      <image:title>Čierny dymovod v podkroví</image:title>
+      <image:caption>Čierny dymovod krbu vedený zvislo cez podkrovie pri drevenej stene.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/izolovany-dymovod-prestup-podkrovie.jpg</image:loc>
+      <image:title>Izolovaný dymovod pri prestupe</image:title>
+      <image:caption>Čierny izolovaný dymovod pri prestupe stropu podkrovia s minerálnou vatou.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/nerezovy-komin-v-podkrovi-detail.jpg</image:loc>
+      <image:title>Detail nerezového komína v podkroví</image:title>
+      <image:caption>Vysoký nerezový komínový systém v podkroví v detaile.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/nerezovy-komin-na-keramickej-streche.jpg</image:loc>
+      <image:title>Nerezový komín na keramickej streche</image:title>
+      <image:caption>Nerezový komín so zakončením nasadený na pôvodný murovaný komín na keramickej streche.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/frezovanie-kominov-servisne-vozidlo.jpg</image:loc>
+      <image:title>Frézovanie komínov — servisné vozidlo</image:title>
+      <image:caption>Servisné vozidlo s nápisom Frézovanie komínov pred rodinným domom.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/nerezovy-komin-na-fasade-poschodoveho-domu.jpg</image:loc>
+      <image:title>Komín na fasáde poschodového domu</image:title>
+      <image:caption>Nerezový komín vedený pozdĺž fasády dvojposchodového rodinného domu.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/nerezovy-komin-bocna-fasada-rodinneho-domu.jpg</image:loc>
+      <image:title>Komín na bočnej fasáde rodinného domu</image:title>
+      <image:caption>Nerezový komín pripevnený k bočnej fasáde staršieho rodinného domu.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/vysoky-nerezovy-komin-pri-zahradnom-objekte.jpg</image:loc>
+      <image:title>Vysoký komín pri záhradnom objekte</image:title>
+      <image:caption>Vysoký nerezový komín postavený pri záhradnom plechovom objekte.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/krbova-pec-v-rodinnej-kuchyni.jpg</image:loc>
+      <image:title>Krbová pec v rodinnej kuchyni</image:title>
+      <image:caption>Menšia krbová pec s ozdobnými kachličkami v rodinnej kuchyni.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/nerezovy-komin-na-fasade-s-konzolou.jpg</image:loc>
+      <image:title>Komín s konzolou na fasáde</image:title>
+      <image:caption>Nerezový komín pripevnený konzolou na bordovej fasáde rodinného domu.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kominy-krby.sk/img/nerezovy-komin-na-fasade-priprava-montaze.jpg</image:loc>
+      <image:title>Príprava montáže komína na fasáde</image:title>
+      <image:caption>Nerezový komín pri fasáde rodinného domu počas montáže.</image:caption>
+    </image:image>
   </url>
 </urlset>
