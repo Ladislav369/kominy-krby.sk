@@ -1,1 +1,11 @@
 DirectoryIndex index.html index.php
+
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Strip www → canonical bare domain
+RewriteCond %{HTTP_HOST} ^www\.kominy-krby\.sk$ [NC]
+RewriteRule ^ https://kominy-krby.sk%{REQUEST_URI} [L,R=301]
