@@ -97,12 +97,36 @@
   .gallery figure a{display:block;line-height:0}
   .gallery img{width:100%;height:220px;object-fit:cover;display:block;background:#eee}
   .gallery figcaption{padding:.6rem .8rem;font-size:.88rem;color:var(--c-muted);line-height:1.35}
+  /* motion fx 1 — gallery 3D tilt */
   @media (hover:hover) and (pointer:fine){
     .gallery figure{perspective:900px;transition:transform .25s ease-out,box-shadow .25s ease-out}
     .gallery figure:hover{box-shadow:0 12px 24px rgba(28,20,16,.12)}
   }
   @media (prefers-reduced-motion:reduce){
     .gallery figure{transition:none !important;transform:none !important}
+  }
+
+  /* motion fx 2 — magnetic CTA buttons */
+  @media (hover:hover) and (pointer:fine){
+    .cta-btn{transition:transform .25s cubic-bezier(.2,.9,.3,1),background .15s}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .cta-btn{transition:background .15s !important;transform:none !important}
+  }
+
+  /* motion fx 3 — scroll-driven fade-up for sections (native CSS, graceful degradation) */
+  @supports (animation-timeline: view()){
+    @media (prefers-reduced-motion:no-preference){
+      section:not(.hero){
+        animation:section-enter linear both;
+        animation-timeline:view();
+        animation-range:entry 0% cover 25%;
+      }
+      @keyframes section-enter{
+        from{opacity:0;transform:translateY(24px)}
+        to{opacity:1;transform:translateY(0)}
+      }
+    }
   }
   .gal-cat{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--c-accent);font-weight:600;margin-bottom:.2rem}
 
@@ -812,8 +836,9 @@
 (function(){
   if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const figures=document.querySelectorAll('.gallery figure');
-  figures.forEach(fig=>{
+
+  // motion fx 1 — gallery 3D tilt
+  document.querySelectorAll('.gallery figure').forEach(fig=>{
     let raf;
     fig.addEventListener('pointermove',e=>{
       if(raf)return;
@@ -826,6 +851,22 @@
       });
     });
     fig.addEventListener('pointerleave',()=>{fig.style.transform=''});
+  });
+
+  // motion fx 2 — magnetic CTA buttons
+  document.querySelectorAll('.cta-btn').forEach(btn=>{
+    let raf;
+    btn.addEventListener('pointermove',e=>{
+      if(raf)return;
+      raf=requestAnimationFrame(()=>{
+        const r=btn.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-.5;
+        const y=(e.clientY-r.top)/r.height-.5;
+        btn.style.transform=`translate(${x*7}px,${y*7}px)`;
+        raf=null;
+      });
+    });
+    btn.addEventListener('pointerleave',()=>{btn.style.transform=''});
   });
 })();
 </script>
