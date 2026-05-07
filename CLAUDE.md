@@ -100,3 +100,14 @@ ked_dokoncis_ulohu_VZDY:
   5_zhrnutie:
     "Daj mi 3 vety: co hotovo | co rozpracovane | co dalej"
 ```
+
+## 🌅 START SESSION — rob AUTOMATICKY
+
+```yaml
+pri_otvoreni_VZDY:
+  1: "git pull (projekt + aresLab-docs)"
+  2: "Nacitaj brief.md + brand.md"
+  3: "Pozri master_log — posledne 3 ENTRY"
+  4: "Pozri open_tasks.md"
+  5: "Opytaj sa: Co dnes robime?"
+```
