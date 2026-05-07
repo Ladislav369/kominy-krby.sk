@@ -10,6 +10,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/js/lite-yt-embed.css">
+<link rel="preload" as="image" href="/img/moderna-krbova-pec-v-obyvacke.jpg?v=2" fetchpriority="high">
 <meta name="theme-color" content="#7a2e0c">
 
 <meta property="og:type" content="website">
@@ -97,6 +98,21 @@
   .gallery figure a{display:block;line-height:0}
   .gallery img{width:100%;height:220px;object-fit:cover;display:block;background:#eee}
   .gallery figcaption{padding:.6rem .8rem;font-size:.88rem;color:var(--c-muted);line-height:1.35}
+  /* hero banner slideshow */
+  .hero-banner{position:relative;aspect-ratio:16/9;max-height:520px;overflow:hidden;background:#1c1410}
+  .hero-banner__track{list-style:none;margin:0;padding:0;position:absolute;inset:0}
+  .hero-banner__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+  .hero-banner__slide.is-active{opacity:1}
+  .hero-banner__slide img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
+  .hero-banner__pause{position:absolute;right:1rem;bottom:1rem;z-index:2;background:rgba(0,0,0,.55);color:#fff;border:0;border-radius:99px;width:2.5rem;height:2.5rem;cursor:pointer;font-size:.9rem;display:grid;place-items:center;line-height:1;transition:background .15s}
+  .hero-banner__pause:hover{background:rgba(0,0,0,.8)}
+  .hero-banner__pause:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  @media (max-width:640px){.hero-banner{aspect-ratio:4/3;max-height:none}}
+  @media (prefers-reduced-motion:reduce){
+    .hero-banner__slide{transition:none;opacity:0}
+    .hero-banner__slide.is-active{opacity:1}
+  }
+
   /* motion fx 1 — gallery 3D tilt */
   @media (hover:hover) and (pointer:fine){
     .gallery figure{perspective:900px;transition:transform .25s ease-out,box-shadow .25s ease-out}
@@ -246,6 +262,37 @@
 </header>
 
 <main id="main">
+
+<section class="hero-banner" aria-roledescription="carousel" aria-label="Naše realizácie">
+  <ul class="hero-banner__track">
+    <li class="hero-banner__slide is-active" role="group" aria-label="1 z 5">
+      <img src="img/moderna-krbova-pec-v-obyvacke.jpg?v=2"
+           alt="Realizácia: moderná krbová pec v obývačke rodinného domu"
+           width="1200" height="1600" fetchpriority="high">
+    </li>
+    <li class="hero-banner__slide" role="group" aria-label="2 z 5">
+      <img src="img/montaz-nerezoveho-komina-rodinny-dom.jpg?v=2"
+           alt="Realizácia: montáž nerezového komína na rodinnom dome"
+           width="1200" height="1600" loading="lazy">
+    </li>
+    <li class="hero-banner__slide" role="group" aria-label="3 z 5">
+      <img src="img/moderny-cierny-rodinny-dom-s-kominom.jpg?v=2"
+           alt="Realizácia: moderný čierny rodinný dom s nerezovým komínom"
+           width="1200" height="1600" loading="lazy">
+    </li>
+    <li class="hero-banner__slide" role="group" aria-label="4 z 5">
+      <img src="img/krbova-vlozka-s-keramickymi-kachlickami.jpg?v=2"
+           alt="Realizácia: krbová vložka s keramickými kachličkami"
+           width="1200" height="1600" loading="lazy">
+    </li>
+    <li class="hero-banner__slide" role="group" aria-label="5 z 5">
+      <img src="img/nerezovy-komin-na-keramickej-streche.jpg?v=2"
+           alt="Realizácia: nerezový komín na keramickej streche"
+           width="1200" height="1600" loading="lazy">
+    </li>
+  </ul>
+  <button class="hero-banner__pause" aria-label="Pozastaviť slideshow" type="button">⏸</button>
+</section>
 
 <section class="hero" aria-labelledby="hero-h1">
   <div class="wrap">
@@ -867,6 +914,35 @@
       });
     });
     btn.addEventListener('pointerleave',()=>{btn.style.transform=''});
+  });
+})();
+</script>
+
+<script>
+// hero banner slideshow (separate IIFE — needs to run even when reduced-motion blocks the motion fx above)
+(function(){
+  const root=document.querySelector('.hero-banner');
+  if(!root)return;
+  const slides=[...root.querySelectorAll('.hero-banner__slide')];
+  if(slides.length<2)return;
+  const btn=root.querySelector('.hero-banner__pause');
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){
+    if(btn)btn.style.display='none';
+    return;
+  }
+  let i=0,paused=false;
+  setInterval(()=>{
+    if(paused)return;
+    slides[i].classList.remove('is-active');
+    i=(i+1)%slides.length;
+    slides[i].classList.add('is-active');
+  },5500);
+  root.addEventListener('mouseenter',()=>paused=true);
+  root.addEventListener('mouseleave',()=>paused=false);
+  btn.addEventListener('click',()=>{
+    paused=!paused;
+    btn.textContent=paused?'▶':'⏸';
+    btn.setAttribute('aria-label',paused?'Spustiť slideshow':'Pozastaviť slideshow');
   });
 })();
 </script>
