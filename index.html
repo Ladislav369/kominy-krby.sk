@@ -9,6 +9,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/js/lite-yt-embed.css">
 <meta name="theme-color" content="#7a2e0c">
 
 <meta property="og:type" content="website">
@@ -115,6 +116,8 @@
   .social-icon{width:1.4rem;height:1.4rem;color:#d8c8b8;display:block;transition:color .15s}
   .footer-social a:hover .social-icon{color:#fff}
   .card-link{display:inline-block;margin-top:.5rem;font-size:.88rem;font-weight:500}
+  .card lite-youtube{margin-top:.85rem;border-radius:6px;overflow:hidden;max-width:none}
+  .card .yt-consent{display:block;margin-top:.4rem;font-size:.75rem;color:var(--c-muted);line-height:1.4}
 
   .skip{position:absolute;left:-9999px}
   .skip:focus{position:static;display:inline-block;background:var(--c-accent);color:#fff;padding:.5rem 1rem}
@@ -244,17 +247,32 @@
         <svg class="card-icon" aria-hidden="true" focusable="false"><use href="#i-lining"/></svg>
         <h3>Vložkovanie komínov</h3>
         <p>Sanácia starých murovaných komínov nerezovou vložkou. Riešenie kondenzátu, dechtu a praskania. Bez búrania.</p>
+        <lite-youtube videoid="14bznPs6gvE"
+                      style="background-image:url('/img/yt/14bznPs6gvE.jpg');"
+                      playlabel="Pozrieť video: Frézovanie a vložkovanie komína — skladanie frézy"
+                      params="modestbranding=1&amp;rel=0"></lite-youtube>
+        <small class="yt-consent">Načítaním videa súhlasíte so spracovaním údajov spoločnosťou YouTube/Google.</small>
       </article>
       <article class="card">
         <svg class="card-icon" aria-hidden="true" focusable="false"><use href="#i-clipboard"/></svg>
         <h3>Revízie a kontroly</h3>
         <p>Východisková revízia po montáži, pravidelná kontrola podľa vyhlášky 401/2007. Vystavenie revíznej správy potrebnej pre poisťovňu.</p>
+        <lite-youtube videoid="H3c7aR-ODO8"
+                      style="background-image:url('/img/yt/H3c7aR-ODO8.jpg');"
+                      playlabel="Pozrieť video: Revízia, kontrola a oprava komínov"
+                      params="modestbranding=1&amp;rel=0"></lite-youtube>
+        <small class="yt-consent">Načítaním videa súhlasíte so spracovaním údajov spoločnosťou YouTube/Google.</small>
       </article>
       <article class="card">
         <svg class="card-icon" aria-hidden="true" focusable="false"><use href="#i-brush"/></svg>
         <h3>Čistenie a frézovanie</h3>
         <p>Mechanické čistenie sadze a dechtu, frézovanie zaneseného prierezu, odstránenie hniezd a prekážok.</p>
         <a class="card-link" href="https://www.kominy-frezovanie.sk" rel="noopener">Viac na kominy-frezovanie.sk →</a>
+        <lite-youtube videoid="2fMk9Ego2O4"
+                      style="background-image:url('/img/yt/2fMk9Ego2O4.jpg');"
+                      playlabel="Pozrieť video: Frézovanie a vložkovanie komína — pohľad z drónu"
+                      params="modestbranding=1&amp;rel=0"></lite-youtube>
+        <small class="yt-consent">Načítaním videa súhlasíte so spracovaním údajov spoločnosťou YouTube/Google.</small>
       </article>
       <article class="card">
         <svg class="card-icon" aria-hidden="true" focusable="false"><use href="#i-fireplace"/></svg>
@@ -746,10 +764,42 @@
           "acceptedAnswer":{"@type":"Answer","text":"Pôsobíme na celom Slovensku — všetky kraje vrátane menších obcí."}
         }
       ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Frézovanie a vložkovanie komína — skladanie frézy",
+      "description": "Praktická ukážka skladania komínovej frézy priamo na komíne. Súčasť série TOUP o frézovaní a vložkovaní starých murovaných komínov nerezovou vložkou.",
+      "thumbnailUrl": "https://kominy-krby.sk/img/yt/14bznPs6gvE.jpg",
+      "uploadDate": "2021-08-20T18:45:23+00:00",
+      "contentUrl": "https://www.youtube.com/watch?v=14bznPs6gvE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/14bznPs6gvE",
+      "publisher": { "@id":"https://kominy-krby.sk/#org" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Frézovanie a vložkovanie komína — pohľad z drónu",
+      "description": "Záber drónom na realizáciu frézovania a vložkovania komína na rodinnom dome. Ukážka rozsahu prác a prístupu k strešnej časti.",
+      "thumbnailUrl": "https://kominy-krby.sk/img/yt/2fMk9Ego2O4.jpg",
+      "uploadDate": "2021-08-03T22:43:47+00:00",
+      "contentUrl": "https://www.youtube.com/watch?v=2fMk9Ego2O4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/2fMk9Ego2O4",
+      "publisher": { "@id":"https://kominy-krby.sk/#org" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Revízia, kontrola a oprava komínov",
+      "description": "Frézovanie a vložkovanie obdĺžnikových komínov v rámci pravidelnej revízie a kontroly. Postup prác kominárskej firmy TOUP.",
+      "thumbnailUrl": "https://kominy-krby.sk/img/yt/H3c7aR-ODO8.jpg",
+      "uploadDate": "2021-06-24T12:04:52+00:00",
+      "contentUrl": "https://www.youtube.com/watch?v=H3c7aR-ODO8",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/H3c7aR-ODO8",
+      "publisher": { "@id":"https://kominy-krby.sk/#org" }
     }
   ]
 }
 </script>
+
+<script src="/js/lite-yt-embed.js" defer></script>
 
 </body>
 </html>
