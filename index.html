@@ -108,6 +108,10 @@
   footer{background:#1c1410;color:#d8c8b8;padding:2rem 0;margin-top:1rem;font-size:.9rem}
   footer a{color:#fff}
   footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+  .footer-sister{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;padding:0 0 1rem;border-bottom:1px solid #2a1f18;margin-bottom:1rem;font-size:.92rem}
+  .footer-sister .lbl{color:#a89684;font-weight:600;margin-right:.2rem}
+  .footer-sister .sep{color:#5a4a40}
+  .card-link{display:inline-block;margin-top:.5rem;font-size:.88rem;font-weight:500}
 
   .skip{position:absolute;left:-9999px}
   .skip:focus{position:static;display:inline-block;background:var(--c-accent);color:#fff;padding:.5rem 1rem}
@@ -240,6 +244,7 @@
         <svg class="card-icon" aria-hidden="true" focusable="false"><use href="#i-brush"/></svg>
         <h3>Čistenie a frézovanie</h3>
         <p>Mechanické čistenie sadze a dechtu, frézovanie zaneseného prierezu, odstránenie hniezd a prekážok.</p>
+        <a class="card-link" href="https://www.kominy-frezovanie.sk" rel="noopener">Viac na kominy-frezovanie.sk →</a>
       </article>
       <article class="card">
         <svg class="card-icon" aria-hidden="true" focusable="false"><use href="#i-fireplace"/></svg>
@@ -544,9 +549,17 @@
 </main>
 
 <footer>
-  <div class="wrap row">
-    <div>© <span id="y">2026</span> Kominy-Krby.sk — komíny a krby na celom Slovensku</div>
-    <div><a href="#main">Hore ↑</a></div>
+  <div class="wrap">
+    <div class="footer-sister" aria-label="Sesterské weby">
+      <span class="lbl">Sesterské weby:</span>
+      <a href="https://www.kominy-frezovanie.sk" rel="noopener">Frézovanie komínov</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="http://eshop.toup.sk" rel="noopener">E-shop TOUP</a>
+    </div>
+    <div class="row">
+      <div>© <span id="y">2026</span> Kominy-Krby.sk — komíny a krby na celom Slovensku</div>
+      <div><a href="#main">Hore ↑</a></div>
+    </div>
   </div>
 </footer>
 
