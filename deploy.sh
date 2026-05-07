@@ -1,29 +1,43 @@
 #!/usr/bin/env bash
-# Simple FTP deploy via curl. Reads credentials from .env.
+# Simple FTP deploy via curl. Credentials resolution order:
+#   1. Existing env vars (CI / one-off override)
+#   2. .env file in this dir (legacy / portability)
+#   3. macOS Keychain entry: service=aresLab/kominy-krby.sk/ftp, account=kominy-krby.sk
 # Note: uses plain FTP because Websupport's TLS data channel drops mid-upload
 # on per-domain agentftp.<domain> accounts (control channel works, data channel 450).
 set -euo pipefail
 
 cd "$(dirname "$0")"
 
-if [[ ! -f .env ]]; then
-  echo "Missing .env (copy .env.example → .env and fill it in)." >&2
-  exit 1
+# .env is optional now — falls back to Keychain.
+if [[ -f .env ]]; then
+  set -a; source .env; set +a
 fi
 
-set -a; source .env; set +a
-
-: "${FTP_HOST:?FTP_HOST not set}"
-: "${FTP_USER:?FTP_USER not set}"
-: "${FTP_PASS:?FTP_PASS not set}"
-: "${FTP_REMOTE_DIR:=/web/}"
+: "${FTP_HOST:=agentftp.kominy-krby.sk}"
+: "${FTP_USER:=agentftp.kominy-krby.sk}"
+: "${FTP_REMOTE_DIR:=/kominy-krby.sk/web/}"
 : "${LOCAL_DIR:=.}"
+
+# Pull password from Keychain if not already in env.
+if [[ -z "${FTP_PASS:-}" ]]; then
+  if ! FTP_PASS=$(security find-generic-password \
+        -s "aresLab/kominy-krby.sk/ftp" -a "${FTP_USER}" -w 2>/dev/null); then
+    cat >&2 <<HINT
+FTP_PASS not in env, .env, or macOS Keychain.
+To save it once into Keychain (password will be prompted if -w omitted):
+  security add-generic-password -s 'aresLab/kominy-krby.sk/ftp' \\
+                                -a '${FTP_USER}' -U -w
+HINT
+    exit 1
+  fi
+fi
 
 # Ensure trailing slash on remote dir.
 [[ "${FTP_REMOTE_DIR}" != */ ]] && FTP_REMOTE_DIR="${FTP_REMOTE_DIR}/"
 
 # Files to skip from the local dir (repo metadata, env, scripts).
-EXCLUDES=(.git .gitignore .env .env.example deploy.sh README.md .DS_Store node_modules .backups)
+EXCLUDES=(.git .gitignore .env .env.example deploy.sh README.md CLAUDE.md .DS_Store node_modules .backups)
 
 upload() {
   local local_path="$1"
