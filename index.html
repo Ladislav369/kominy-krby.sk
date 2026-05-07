@@ -100,7 +100,7 @@
   .gallery figcaption{padding:.6rem .8rem;font-size:.88rem;color:var(--c-muted);line-height:1.35}
   /* hero banner slideshow + ken-burns zoom */
   .hero-banner{position:relative;aspect-ratio:16/9;max-height:520px;overflow:hidden;background:#1c1410}
-  .hero-banner__track{list-style:none;margin:0;padding:0;position:absolute;inset:0}
+  .hero-banner__track{margin:0;padding:0;position:absolute;inset:0}
   .hero-banner__slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
   .hero-banner__slide.is-active{opacity:1}
   .hero-banner__slide img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;transition:transform .9s ease}
@@ -270,33 +270,33 @@
 <main id="main">
 
 <section class="hero-banner" aria-roledescription="carousel" aria-label="Naše realizácie">
-  <ul class="hero-banner__track">
-    <li class="hero-banner__slide is-active" role="group" aria-label="1 z 5">
+  <div class="hero-banner__track">
+    <div class="hero-banner__slide is-active" role="group" aria-label="1 z 5">
       <img src="img/moderna-krbova-pec-v-obyvacke.jpg?v=2"
            alt="Realizácia: moderná krbová pec v obývačke rodinného domu"
            width="1200" height="1600" fetchpriority="high">
-    </li>
-    <li class="hero-banner__slide" role="group" aria-label="2 z 5">
+    </div>
+    <div class="hero-banner__slide" role="group" aria-label="2 z 5">
       <img src="img/montaz-nerezoveho-komina-rodinny-dom.jpg?v=2"
            alt="Realizácia: montáž nerezového komína na rodinnom dome"
            width="1200" height="1600" loading="lazy">
-    </li>
-    <li class="hero-banner__slide" role="group" aria-label="3 z 5">
+    </div>
+    <div class="hero-banner__slide" role="group" aria-label="3 z 5">
       <img src="img/moderny-cierny-rodinny-dom-s-kominom.jpg?v=2"
            alt="Realizácia: moderný čierny rodinný dom s nerezovým komínom"
            width="1200" height="1600" loading="lazy">
-    </li>
-    <li class="hero-banner__slide" role="group" aria-label="4 z 5">
+    </div>
+    <div class="hero-banner__slide" role="group" aria-label="4 z 5">
       <img src="img/krbova-vlozka-s-keramickymi-kachlickami.jpg?v=2"
            alt="Realizácia: krbová vložka s keramickými kachličkami"
            width="1200" height="1600" loading="lazy">
-    </li>
-    <li class="hero-banner__slide" role="group" aria-label="5 z 5">
+    </div>
+    <div class="hero-banner__slide" role="group" aria-label="5 z 5">
       <img src="img/nerezovy-komin-na-keramickej-streche.jpg?v=2"
            alt="Realizácia: nerezový komín na keramickej streche"
            width="1200" height="1600" loading="lazy">
-    </li>
-  </ul>
+    </div>
+  </div>
   <button class="hero-banner__pause" aria-label="Pozastaviť slideshow" type="button">⏸</button>
 </section>
 
