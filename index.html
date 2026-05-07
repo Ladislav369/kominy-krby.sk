@@ -97,6 +97,13 @@
   .gallery figure a{display:block;line-height:0}
   .gallery img{width:100%;height:220px;object-fit:cover;display:block;background:#eee}
   .gallery figcaption{padding:.6rem .8rem;font-size:.88rem;color:var(--c-muted);line-height:1.35}
+  @media (hover:hover) and (pointer:fine){
+    .gallery figure{perspective:900px;transition:transform .25s ease-out,box-shadow .25s ease-out}
+    .gallery figure:hover{box-shadow:0 12px 24px rgba(28,20,16,.12)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .gallery figure{transition:none !important;transform:none !important}
+  }
   .gal-cat{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--c-accent);font-weight:600;margin-bottom:.2rem}
 
   .contact-cards{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:0 0 1.25rem}
@@ -800,6 +807,28 @@
 </script>
 
 <script src="/js/lite-yt-embed.js" defer></script>
+
+<script>
+(function(){
+  if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const figures=document.querySelectorAll('.gallery figure');
+  figures.forEach(fig=>{
+    let raf;
+    fig.addEventListener('pointermove',e=>{
+      if(raf)return;
+      raf=requestAnimationFrame(()=>{
+        const r=fig.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-.5;
+        const y=(e.clientY-r.top)/r.height-.5;
+        fig.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg) scale(1.04)`;
+        raf=null;
+      });
+    });
+    fig.addEventListener('pointerleave',()=>{fig.style.transform=''});
+  });
+})();
+</script>
 
 </body>
 </html>
