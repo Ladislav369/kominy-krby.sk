@@ -74,3 +74,29 @@ workflow: "aresLab-docs/runbooks/MULTI_DEVICE_WORKFLOW.md"
 novy_projekt: "aresLab-docs/runbooks/ONBOARD_EXISTING_PROJECT.md"
 setup_mac: "aresLab-docs/runbooks/SETUP_ON_NEW_MAC.md"
 ```
+
+---
+
+## 🔚 KONIEC SESSION — rob AUTOMATICKY
+
+```yaml
+ked_dokoncis_ulohu_VZDY:
+  
+  1_master_log:
+    kde: "~/Documents/AresLab/aresLab-docs/_system/logs/master_log.md"
+    format: "### ENTRY-XXX | datum | co sa urobilo | co je dalej"
+    
+  2_ak_novy_agent:
+    over: "Je v aresLab-docs/agents/specialists/? Ak nie — presun"
+    
+  3_ak_heslo_ulozene:
+    zapis_do: "projects/ecokom/access.md"
+    format: "heslo → Apple Keychain: {nazov-polozky}"
+    
+  4_git_push:
+    projekt: "git push kominy-krby.sk"
+    system: "git push aresLab-docs (ak zmeny)"
+    
+  5_zhrnutie:
+    "Daj mi 3 vety: co hotovo | co rozpracovane | co dalej"
+```
