@@ -7,3 +7,4 @@ dist/
 .deploy/
 .backups/
 *.log
+.lighthouseci/
